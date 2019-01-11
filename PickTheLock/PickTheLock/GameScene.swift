@@ -140,7 +140,7 @@ class GameScene: SKScene {
         
         Path = UIBezierPath(arcCenter: CGPoint(x: self.frame.midX, y: self.frame.midY), radius: 129, startAngle: rad, endAngle: rad + CGFloat(Double.pi * 4), clockwise: true)
         
-        let follow = SKAction.follow(Path.cgPath, asOffset: false, orientToPath: true, speed: 210)
+        let follow = SKAction.follow(Path.cgPath, asOffset: false, orientToPath: true, speed: 230)
         Person.run(SKAction.repeatForever(follow).reversed())
         
     }
@@ -154,7 +154,7 @@ class GameScene: SKScene {
         
         Path = UIBezierPath(arcCenter: CGPoint(x: self.frame.midX, y: self.frame.midY), radius: 129, startAngle: rad, endAngle: rad + CGFloat(Double.pi * 4), clockwise: true)
         
-        let follow = SKAction.follow(Path.cgPath, asOffset: false, orientToPath: true, speed: 210)
+        let follow = SKAction.follow(Path.cgPath, asOffset: false, orientToPath: true, speed: 230)
         Person.run(SKAction.repeatForever(follow))
         
     }
@@ -165,7 +165,7 @@ class GameScene: SKScene {
             AddDot()
             intersected = false
             
-                                                                    currentScore -= 1
+            currentScore -= 1
             LevelLabel.text = "\(currentScore)"
             if currentScore <= 0 {
                 nextLevel()
@@ -179,7 +179,7 @@ class GameScene: SKScene {
     }
     
     func nextLevel() {
-                                                                    currentLevel += 1
+        currentLevel += 1
         currentScore = currentLevel
         LevelLabel.text = "\(currentScore)"
         won()
